@@ -15,7 +15,7 @@ const authRoutes = require('./routes/api/authroutes')
 const uploadRoutes = require('./routes/api/uploadroutes')
 const config = require('./config/config')
 
-const PORT = process.env.PORT || 4100;
+const PORT = process.env.PORT || 3000;
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
 
