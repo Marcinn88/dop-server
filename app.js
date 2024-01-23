@@ -39,13 +39,13 @@ const isAccessible = async path => {
   }
 };
 
-const createFolderIsNotExist = async (folder) => {
-  if (!(await isAccessible(folder))) {
-    await fs.mkdir(folder, {
-      recursive: true
-    });
-  }
-}
+// const createFolderIsNotExist = async (folder) => {
+//   if (!(await isAccessible(folder))) {
+//     await fs.mkdir(folder, {
+//       recursive: true
+//     });
+//   }
+// }
 
 app.use((req, res, next) =>{
   next(createError(404));
