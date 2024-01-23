@@ -39,13 +39,13 @@ const isAccessible = async path => {
   }
 };
 
-// const createFolderIsNotExist = async (folder) => {
-//   if (!(await isAccessible(folder))) {
-//     await fs.mkdir(folder, {
-//       recursive: true
-//     });
-//   }
-// }
+const createFolderIsNotExist = async (folder) => {
+  if (!(await isAccessible(folder))) {
+    await fs.mkdir(folder, {
+      recursive: true
+    });
+  }
+}
 
 app.use((req, res, next) =>{
   next(createError(404));
@@ -62,8 +62,8 @@ app.use((err, req, res, next) => {
 connection.then(()=>{
   console.log("Database connection succesfull.")
   app.listen(PORT, async () => {
-    // createFolderIsNotExist(config.UPLOADS_PATH);
-    // createFolderIsNotExist(config.IMAGES_PATH);
+    createFolderIsNotExist(config.UPLOADS_PATH);
+    createFolderIsNotExist(config.IMAGES_PATH);
     console.log(`Server running. Use our API on port: ${PORT}`)
   })
 
