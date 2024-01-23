@@ -7,7 +7,6 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 
-
 const app = express()
 const contactRoutes = require('./routes/api/contactsrouter')
 const articleRoutes = require('./routes/api/articlesrouter')
@@ -18,8 +17,6 @@ const config = require('./config/config')
 const PORT = process.env.PORT || 3000;
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short'
-
-
 
 const connection = mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
